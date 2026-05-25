@@ -22,6 +22,8 @@
                 @else
                     <li><a href="{{ route('user.dashboard') }}" class="nav-link {{ request()->routeIs('user.dashboard') ? 'active' : '' }}">Reports</a></li>
                     <li><a href="{{ route('user.recycle') }}" class="nav-link {{ request()->routeIs('user.recycle') ? 'active' : '' }}">Recycling & Rewards</a></li>
+                    <li><a href="{{ route('user.redeem') }}" class="nav-link {{ request()->routeIs('user.redeem') ? 'active' : '' }}">Eco-Store</a></li>
+                    <li><a href="{{ route('user.schedule') }}" class="nav-link {{ request()->routeIs('user.schedule') ? 'active' : '' }}">Schedules</a></li>
                     <li><a href="{{ route('user.education') }}" class="nav-link {{ request()->routeIs('user.education') ? 'active' : '' }}">Education & Awareness</a></li>
                 @endif
             </ul>

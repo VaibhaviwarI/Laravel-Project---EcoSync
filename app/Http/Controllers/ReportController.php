@@ -58,4 +58,19 @@ class ReportController extends Controller
 
         return redirect()->route('user.dashboard')->with('success', 'Your sanitation report has been submitted successfully.');
     }
+
+    public function schedule()
+    {
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
+        $activeSchedules = SanitationReport::whereIn('status', ['in_progress', 'resolved'])
+            ->orderBy('updated_at', 'desc')
+            ->take(10)
+            ->get();
+
+        return view('user.schedule', compact('activeSchedules'));
+    }
 }

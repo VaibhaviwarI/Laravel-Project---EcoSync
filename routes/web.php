@@ -32,6 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/recycle', [RecyclingController::class, 'index'])->name('user.recycle');
     Route::post('/recycle', [RecyclingController::class, 'store'])->name('recycle.store');
     Route::get('/education', [RecyclingController::class, 'education'])->name('user.education');
+    Route::get('/redeem', [RecyclingController::class, 'showRedeem'])->name('user.redeem');
+    Route::post('/redeem/claim', [RecyclingController::class, 'claimRedeem'])->name('user.redeem.claim');
+    Route::get('/schedule', [ReportController::class, 'schedule'])->name('user.schedule');
 
     // Admin Portal
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
